@@ -1,8 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
 const NAV_ITEMS = [
   { key: 'courses', label: 'Trinity Coaching Courses', icon: '🎛️', href: '/courses' },
@@ -47,8 +48,9 @@ export default function Sidebar() {
           minHeight: 72,
         }}
       >
-        <Image
-          src="/trinity-logo.png"
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={`${BASE}/trinity-logo.png`}
           alt="Trinity Advisory"
           width={70}
           height={20}
